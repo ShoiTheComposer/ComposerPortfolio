@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleReset.css">
+    <link rel="stylesheet" href="audioPlayerStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Logo Var 9 (1).svg">
+    <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- stylistic elements -->
+    <div id="cover"></div>
+    <div class="followCircle"></div>
+    <div id="OverlayStar">
+        <div class="star">
+            <span class="starLine"></span>
+            <span class="starLine"></span>
+            <span class="starLine"></span>
+            <span class="starLine"></span>
+        </div>
+        <div class="star">
+            <span class="starLine"></span>
+            <span class="starLine"></span>
+            <span class="starLine"></span>
+            <span class="starLine"></span>
+        </div>
+    </div>
+    <!-- Header -->
+    <header>
+        <div class="headerContainer container">
+            <div id="logoWrapper">
+                <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 58C10 66.8366 17.1634 74 26 74C34.8366 74 42 66.8366 42 58M42 58C42 49.1634 34 44.6667 26 42C18 39.3333 10 34.8366 10 26C10 17.1634 17.1634 10 26 10C34.8366 10 42 17.1634 42 26V42V58ZM42 58C42 49.1634 49.1634 42 58 42C66.8366 42 74 49.1634 74 58C74 66.8366 74 70 74 78M10 58C10 66.8366 17.1634 74 26 74C34.8366 74 42 66.8366 42 58M74 58C74 49.1634 66.8366 42 58 42" stroke="black" stroke-width="19.9"/>
+                    <path d="M10 58C10 66.8366 17.1634 74 26 74C34.8366 74 42 66.8366 42 58M42 58C42 49.1634 34 44.6667 26 42C18 39.3333 10 34.8366 10 26C10 17.1634 17.1634 10 26 10C34.8366 10 42 17.1634 42 26V42V58ZM42 58C42 49.1634 49.1634 42 58 42C66.8366 42 74 49.1634 74 58C74 66.8366 74 70 74 78M10 58C10 66.8366 17.1634 74 26 74C34.8366 74 42 66.8366 42 58M74 58C74 49.1634 66.8366 42 58 42" stroke="white" stroke-width="10"/>
+                </svg>
+                <span id="logoLine"></span>
+                <h1>Shiou Hsu</h1>
+            </div>
+            <ul>
+                <p class="link">Home</p>
+                <p class="link">About</p>
+                <p class="link">Projects</p>
+                <p class="link">Contact</p>
+            </ul>
+        </div>
+        <button class="toggleBtn clickAble">
+            <span class="toggleBtnLine"></span>
+            <span class="toggleBtnLine"></span>
+            <span class="toggleBtnLine"></span>
+        </button>
+    </header>
+
+    <!-- Audio Player -->
+    <div class="audioPlayer">
+        <div class="duration">
+            <div class="durationText">
+                <div class="playPause">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="playerIcon" height="16" width="12" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="playerIcon" height="16" width="12" viewBox="0 0 320 512"><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>
+                </div>
+                <p>Duration&nbsp;:&nbsp;</p>
+                <p class="currentTime">00:00</p>
+                <p>&nbsp;/&nbsp;</p>
+                <p class="OverallTime">10:00</p>
+                <div class="volume">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M533.6 32.5C598.5 85.2 640 165.8 640 256s-41.5 170.7-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z"/></svg>
+                    <input type="range" min="0" max="100" value="75" class="volumeSlider slider">
+                </div>
+            </div>
+            <input type="range" min="0" max="100" value="0" class="durationSlider slider">
+        </div>
+    </div>
+    <button class="playerBtn clickAble">
+        <span class="playerLine"></span>
+        <span class="playerLine"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" class='playsvg'height="16" width="16" viewBox="0 0 512 512"><path d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"/></svg>
+    </button>
+
+    <!-- Main -->
+    <div class="contentWrapper">
+        <div id="heroWrapper">
+            <h1>Shi<span class="clickAble">o</span>u</h1>
+            <h1>Hsu</h1>
+            <div>
+                <p>Composer for&nbsp</p>
+                <span id="typed"></span>
+            </div>
+            <div id="backgroundVid">
+                <iframe src="https://fast.wistia.net/embed/iframe/ejmgimvw86" allow="autoplay" frameborder="0" scrolling="no" width="1920" height="1080"></iframe>
+            </div>  
+        </div>
+
+        <div id="aboutWrapper">
+            <h1>Ab<span class="clickAble">o</span>ut.<span id="aboutLine"></span></h1>
+
+            <p>I'm Shiou Hsu - a Composer based in <strong>Boston</strong>. I've played games and instruments ever since I was a kid, and got into <strong>game audio</strong> in 2019 when a friend asked me to compose music for their game.
+            <p>Since then, I've worked with multiple indie developers over the years, shipping titles from <strong>mobile</strong> to <strong>Switch</strong> and <strong>PC</strong>.</strong>
+            <p>To ensure that the projects I take on can be as polished as possible, I like to dive deep into the technology and further my understanding.I've learned a lot about <strong>game engines</strong> (Unity, Unreal Engine), their respective programming languages, and <strong>middlewares</strong> (FMOD, Wwise) from past projects.</p>
+            <p>Also, this website is designed(figma) and programmed(html, css,js) by me.</p>
+
+            <img class="photoMe" src="Photos/Me.png" alt="">
+        </div>
+
+        <div id="projectsCenter">
+        <div id="ProjectsWrapper">
+            <!-- First of each class should match -->
+            <h1 class="projectsHero">Projects</h1>
+                <a  class="artWork" href="https://play.google.com/store/apps/details?id=com.kotobagames.namelesscat&hl=en_US&pli=1" target="_blank"><img  src="Photos/Previous game photos/Nameless Cat 1.jpg" alt="image failed to load"></a>
+                <a  class="artWork" href="https://play.google.com/store/apps/details?id=com.skone.relifeworld&hl=en_US" target="_blank"><img src="Photos/Previous game photos/Gang Start.jpg" alt="image failed to load"></a>
+                <a  class="artWork" href="https://play.google.com/store/apps/details?id=com.heaventravel&hl=en&gl=US" target="_blank"><img src="Photos/Previous game photos/Heaven Travel.jpg" alt="image failed to load"></a>
+                <a  class="artWork" href="https://store.steampowered.com/app/1487270" target="_blank"><img src="Photos/Previous game photos/Last Command.jpg" alt="image failed to load"></a>  
+                <a  class="artWork" href="https://untd.io/r/AyiNhHGueGSQ" target="_blank"><img src="Photos/Previous game photos/Album_Compressed.png" alt="image failed to load"></a>  
+                <a  class="artWork" href="" target="_blank"><img src="Photos/Previous game photos/Farewell Chang Chung_Compressed.jpg" alt="image failed to load"></a>  
+                <button class="songs"><source src="Music/Snowden_Sanctuary.ogg">Demo music</button>
+                <button class="songs"><source src="Music/main_menu_theme.ogg">Demo music</button>
+                <button class="songs"><source src="Music/Wonder.ogg">Demo music</button>
+                <button class="songs"><source src="Music/Iron_knight_zero.ogg">Demo music</button>
+                <button class="songs"><source src="Music/Callula_Crossfade.ogg">Demo music</button>
+                <button class="songs"><source src="Music/end_music.ogg">Demo music</button>
+                <p class="year">2020</p>
+                <p class="year">2022</p>
+                <p class="year">2022</p>
+                <p class="year">2022</p>
+                <p class="year">2022</p>
+                <p class="year">2023</p>
+                <p class="company">Kotoba Games</p>
+                <p class="company">Sick Games</p>
+                <p class="company">YanSquareHeaven</p>
+                <p class="company">No Stuck Game Studio</p>
+                <p class="company">Personal</p>
+                <p class="company">Hot Air Balloon Productions</p>
+            <h1 class="songTitleWrapper">Playing:&nbsp&nbsp<span class="songTitle"></span></h1>
+        </div>
+        </div>
+
+        <div id="ContactWrapper">
+            <div id="contactHero">
+                <h1>Contact</h1>
+                <div id="texted2">
+                    <p>Let's chat about&nbsp</p>
+                    <p id="typed2"></p>
+                </div>
+                <div id="emailWrapper">
+                    <a id="email" href="mailto:newshiou713@gmail.com?body=Hey%20Shiou!%0A...">
+                        <svg id="leftArrow" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                        newshiou713@gmail.com
+                        <svg id="rightArrow" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div id="contactBottom">
+                <div class="socials">
+                    <a href="https://twitter.com/____shoi" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM351.3 199.3v0c0 86.7-66 186.6-186.6 186.6c-37.2 0-71.7-10.8-100.7-29.4c5.3 .6 10.4 .8 15.8 .8c30.7 0 58.9-10.4 81.4-28c-28.8-.6-53-19.5-61.3-45.5c10.1 1.5 19.2 1.5 29.6-1.2c-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3c-9-6-16.4-14.1-21.5-23.6s-7.8-20.2-7.7-31c0-12.2 3.2-23.4 8.9-33.1c32.3 39.8 80.8 65.8 135.2 68.6c-9.3-44.5 24-80.6 64-80.6c18.9 0 35.9 7.9 47.9 20.7c14.8-2.8 29-8.3 41.6-15.8c-4.9 15.2-15.2 28-28.8 36.1c13.2-1.4 26-5.1 37.8-10.2c-8.9 13.1-20.1 24.7-32.9 34c.2 2.8 .2 5.7 .2 8.5z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/tig.hug_/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@shiouhsu4869" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shiou-hsu-00030418a" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    </a>
+                </div>
+                <div class="copy">&copy; 2024 Shiou Hsu Portfolio</div>
+            </div>
+        </div>
+    </div>
+    <!-- Custom Script Locomotive -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- Custom Script textFit.js -->
+    <script src="textFit.js"></script>
+    <!-- Custom Script Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Custom Script Howler.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Custom Script Gsap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+    <!-- main Script -->
+    <script src="audioPlayerScript.js"></script>
+    <script src="Menu Toggle.js"></script>
+    <script src="Cursor follower script.js"></script>
+    <script src="PageLoaderscript.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
