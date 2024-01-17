@@ -2,6 +2,7 @@ console.clear;
 let playerBtn = document.getElementsByClassName('playerBtn')[0];
 let playerToggle = false;
 let playingAnimation = false;
+let Vynl;
 
 gsap.set(".playerLine:nth-child(1)", {
     x: -7,
@@ -136,19 +137,7 @@ var sound = new Howl({
 // Load Playlist Detect Songs
 playList.forEach(function(elem) {
     elem.addEventListener("click", function() {
-        gsap.set(".songs", {
-            color: "black",
-            backgroundColor: "white",
-            borderInline: "none",
-        });
-        gsap.set(elem, {
-            color: "gray",
-            backgroundColor: "black",
-            borderInline: "1px solid gray",
-        });
-
         if(sound._src != elem.firstChild.src){
-            changeSongTitle("loading...");
             sound.unload()
             sound = new Howl({
                 src: [elem.firstChild.src],
@@ -156,8 +145,20 @@ playList.forEach(function(elem) {
                 html5: true,
                 volume: 1,
                 onload: function() {
+                    if (Vynl != undefined){
+                        rotateVinyl("stop");
+                    }
+                    Vynl = elem;
+                    if (gsap.getTweensOf(Vynl.querySelector('.vynlbg')).length == 0){
+                        gsap.to(Vynl.querySelector('.vynlbg'),{
+                            rotate: "360deg",
+                            ease: "none",
+                            duration: 3,
+                            repeat: -1,
+                        })
+                    }
                     playMusic();
-                    changeSongTitle(elem.firstChild.src.split('/').slice(0,5)[4]);
+                    changeSongTitle(elem.firstChild.src.split('/').slice(0,5)[5]);
                     // toggle Player controls out
                     if (playerToggle != true){
                         togglePlayer();
@@ -173,6 +174,38 @@ playList.forEach(function(elem) {
     });
 });
 
+// Rotate Animation
+function rotateVinyl(elm){
+    console.log(Vynl);
+    if (String(elm) == "play"){
+        //Different songs
+        console.log("play Vynl");
+        gsap.to(gsap.getTweensOf(Vynl.querySelector('.vynlbg'))[0],{
+            timeScale: 1,
+            duration: 2,
+            ease: "power2.out"
+        })
+        gsap.to(Vynl, {
+            filter: "none",
+            duration:0.5,
+        });
+    }
+    else if (String(elm) == "stop"){
+        console.log("Stop Vynl");
+        console.log(gsap.getTweensOf(Vynl.querySelector('.vynlbg'))[0]);
+        gsap.to(gsap.getTweensOf(Vynl.querySelector('.vynlbg'))[0],{
+            timeScale: 0,
+            duration: 2,
+            ease: "power2.out"
+        })
+        gsap.to(Vynl, {
+            filter: "invert(100%) sepia(0%) saturate(373%) hue-rotate(44deg) brightness(80%) contrast(100%)",
+            duration:0.3,
+            ease: "power4.out"
+        });
+    }
+}
+
 // Basic Playing function
 function playMusic() {
     if (sound.playing() != true){
@@ -183,6 +216,7 @@ function playMusic() {
         gsap.set(pauseIcon, {
             opacity: 100,
         });
+        rotateVinyl("play");
     }
     else{
         sound.pause(currentSongId);
@@ -192,8 +226,9 @@ function playMusic() {
         gsap.set(pauseIcon, {
             opacity: 0,
         });
+        rotateVinyl("stop");
     }
-    console.log("playing music ID = " + currentSongId);
+    // console.log("playing music ID = " + currentSongId);
 }
 
 // Custom Functions
@@ -216,7 +251,8 @@ function changeSongTitle(songname){
     let interval = null;
     let iteration = 0;
     songTitle.innerText = songname;
-    console.log(songname)
+    // console.log(songname);
+    
   
     clearInterval(interval);
 

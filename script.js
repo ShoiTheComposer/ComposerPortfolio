@@ -100,6 +100,7 @@ gsap.to("#ProjectsWrapper", {
 
 
 
+
 let projectsTl = gsap.timeline({
     scrollTrigger: {
         scroller:".contentWrapper",
@@ -107,6 +108,7 @@ let projectsTl = gsap.timeline({
         start: "50% 50%",
         end: "+=7500",
         pin: "#projectsCenter",
+        onEnter: fitText(),
         // snap: {
         //     snapTo: 1 / 6,
         //     duration: 0.5,

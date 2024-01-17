@@ -136,37 +136,37 @@ toggleBtn.addEventListener("mouseleave", function() {
 // Scroll to
 links[0].addEventListener("click", () => {
   var tl = gsap.timeline({});
-  tl.set("#cover", {right: "auto",left: 0});
-  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 1});
   tl.add(function(){toggleMenu()},">");
+  tl.set("#cover", {right: "auto",left: 0});
+  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 0.4});
   tl.add(function(){locoScroll.scrollTo(0, {duration: "0"})})
   tl.set("#cover", {right: 0,left: "auto"});
-  tl.to("#cover", {delay: 0.4,width: "0vw",ease:"power2.out",duration: 1});
+  tl.to("#cover", {delay:0.2, width: "0vw",ease:"power2.out",duration: 0.4});
 });
 links[1].addEventListener("click", () => {
   var tl = gsap.timeline({});
-  tl.set("#cover", {right: "auto",left: 0});
-  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 1});
   tl.add(function(){toggleMenu()},">");
+  tl.set("#cover", {right: "auto",left: 0});
+  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 0.4});
   tl.add(function(){locoScroll.scrollTo("#aboutWrapper", {duration: "0", offset: "-50"})})
   tl.set("#cover", {right: 0,left: "auto"});
-  tl.to("#cover", {delay: 0.4,width: "0vw",ease:"power2.out",duration: 1});
+  tl.to("#cover", {delay:0.2, width: "0vw",ease:"power2.out",duration: 0.4});
 });
 links[2].addEventListener("click", () => {
   var tl = gsap.timeline({});
-  tl.set("#cover", {right: "auto",left: 0});
-  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 1});
   tl.add(function(){toggleMenu()},">");
-  tl.add(function(){locoScroll.scrollTo("#projectsCenter", {duration: "0", offset: "-200"})})
+  tl.set("#cover", {right: "auto",left: 0});
+  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 0.4});
+  tl.add(function(){locoScroll.scrollTo("#projectsCenter", {duration: "0", offset: "-210"})})
   tl.set("#cover", {right: 0,left: "auto"});
-  tl.to("#cover", {delay: 0.4,width: "0vw",ease:"power2.out",duration: 1});
+  tl.to("#cover", {delay:0.2, width: "0vw",ease:"power2.out",duration: 0.4});
 });
 links[3].addEventListener("click", () => {
   var tl = gsap.timeline({});
-  tl.set("#cover", {right: "auto",left: 0});
-  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 1});
   tl.add(function(){toggleMenu()},">");
+  tl.set("#cover", {right: "auto",left: 0});
+  tl.to("#cover", {width: "100vw",ease:"power2.out",duration: 0.4});
   tl.add(function(){locoScroll.scrollTo("#ContactWrapper", {duration: "0"})})
   tl.set("#cover", {right: 0,left: "auto"});
-  tl.to("#cover", {delay: 0.4,width: "0vw",ease:"power2.out",duration: 1});
+  tl.to("#cover", {delay:0.2, width: "0vw",ease:"power2.out",duration: 0.4});
 });
