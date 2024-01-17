@@ -158,7 +158,7 @@ playList.forEach(function(elem) {
                         })
                     }
                     playMusic();
-                    changeSongTitle(elem.firstChild.src.split('/').slice(0,5)[5]);
+                    changeSongTitle(elem.firstChild.src.split('/').slice(0,2)[1]);
                     // toggle Player controls out
                     if (playerToggle != true){
                         togglePlayer();
