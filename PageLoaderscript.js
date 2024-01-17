@@ -8,9 +8,32 @@ function showCircle(){
         duration:1,
     })
 }
+function isMobile() {
+    var width = window.innerWidth;
+    if (width < 640) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     fitText();
-    console.log("Website loaded");
-  });
+});
 
+// Resize Detection
+var changeDevice = isMobile();
+var resizeId;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeId);
+    resizeId = setTimeout(doneResizing, 400);
+});
+
+function doneResizing(){
+    if(changeDevice != isMobile())
+    {
+        window.location.reload();
+    }
+    fitText();
+}

@@ -34,6 +34,7 @@ locoScroll.on("scroll", ScrollTrigger.update);
 /////////// Normal Animations ///////////
 /////////////////////////////////////////
 
+
 // Hero Animation
 var typed = new Typed('#typed', {
     strings: ['Video Games', 'Films', 'Documentary', 'Any Project', 'You'],
@@ -45,26 +46,27 @@ var typed = new Typed('#typed', {
 });
 
 // portfolio transition
-gsap.fromTo(".photoMe",{width: "10%"},{
-    scrollTrigger: {
-        trigger: ".photoMe",
-        start: "top bottom",
-        scroller:".contentWrapper",
-        end: "top top",
-        scrub: 0.5,
-      },
-    width: "45%",
-});
-
-gsap.to(".followCircle", {
-    scrollTrigger: {
-        trigger: "#ProjectsWrapper",
-        end: "top bottom",
-        scroller:".contentWrapper",
-        scrub: 1,
-      },
-    opacity: 0,
-});
+if (isMobile() == false){
+    gsap.fromTo(".photoMe",{width: "10%"},{
+        scrollTrigger: {
+            trigger: ".photoMe",
+            start: "top bottom",
+            scroller:".contentWrapper",
+            end: "top top",
+            scrub: 0.5,
+          },
+        width: "45%",
+    });
+    gsap.to(".followCircle", {
+        scrollTrigger: {
+            trigger: "#ProjectsWrapper",
+            end: "top bottom",
+            scroller:".contentWrapper",
+            scrub: 1,
+          },
+        opacity: 0,
+    });
+}
 
 gsap.to("body", {
     scrollTrigger: {
@@ -100,57 +102,46 @@ gsap.to("#ProjectsWrapper", {
 
 
 
-
-let projectsTl = gsap.timeline({
-    scrollTrigger: {
-        scroller:".contentWrapper",
-        scrub: true,
-        start: "50% 50%",
-        end: "+=7500",
-        pin: "#projectsCenter",
-        onEnter: fitText(),
-        // snap: {
-        //     snapTo: 1 / 6,
-        //     duration: 0.5,
-        //     ease: "power4.In"
-        // },
-    }
-});
-
-projectsTl.fromTo(".artWork",{
-    clipPath: "inset(100% 0% 0% 0%)",
-},{
-    clipPath: "inset(0% 0% 0% 0%)",
-    stagger: 0.5,
-}),
-projectsTl.fromTo(".year",{
-    clipPath: "inset(0% 100% 0% 0%)",
-},{
-    clipPath: "inset(0% 0% 0% 0%)",
-    stagger: 0.5,
-},"<"),
-projectsTl.fromTo(".company",{
-    clipPath: "inset(0% 0% 0% 100%)",
-},{
-    clipPath: "inset(0% 0% 0% 0%)",
-    stagger: 0.5,
-},"<"),
-projectsTl.fromTo(".songs",{
-    clipPath: "inset(0% 0% 0% 100%)",
-},{
-    clipPath: "inset(0% 0% 0% 0%)",
-    stagger: 0.5,
-},"<");
-
-// Projects Text Fit
-var resizeId;
-window.addEventListener('resize', function() {
-    clearTimeout(resizeId);
-    resizeId = setTimeout(doneResizing, 400);
-});
-
-function doneResizing(){
-    fitText();
+if (isMobile() == false){
+    let projectsTl = gsap.timeline({
+        scrollTrigger: {
+            scroller:".contentWrapper",
+            scrub: true,
+            start: "50% 50%",
+            end: "+=7500",
+            pin: "#projectsCenter",
+            onEnter: fitText(),
+            // snap: {
+            //     snapTo: 1 / 6,
+            //     duration: 0.5,
+            //     ease: "power4.In"
+            // },
+        }
+    });
+    projectsTl.fromTo(".artWork",{
+        clipPath: "inset(100% 0% 0% 0%)",
+    },{
+        clipPath: "inset(0% 0% 0% 0%)",
+        stagger: 0.5,
+    }),
+    projectsTl.fromTo(".year",{
+        clipPath: "inset(0% 100% 0% 0%)",
+    },{
+        clipPath: "inset(0% 0% 0% 0%)",
+        stagger: 0.5,
+    },"<"),
+    projectsTl.fromTo(".company",{
+        clipPath: "inset(0% 0% 0% 100%)",
+    },{
+        clipPath: "inset(0% 0% 0% 0%)",
+        stagger: 0.5,
+    },"<"),
+    projectsTl.fromTo(".songs",{
+        clipPath: "inset(0% 0% 0% 100%)",
+    },{
+        clipPath: "inset(0% 0% 0% 0%)",
+        stagger: 0.5,
+    },"<");
 }
 
 //footer animation
@@ -162,7 +153,7 @@ var typed2 = new Typed('#typed2', {
     backDelay: 1000,
     loop: true,
 });
-
+ 
 const email = document.getElementById("email");
 let tl = gsap.timeline({
     repeat: -1, 

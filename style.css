@@ -265,7 +265,6 @@ body{
     background-image:
       linear-gradient(to right, var(--border-color) 1px, transparent 1px),
       linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
-
 }
 #projectsCenter{
     display: flex;
@@ -304,7 +303,6 @@ body{
     object-fit: cover;
     object-position: left 85%;
 }
-
 .year{
     grid-area: 1 / 1 / 2 / 2;
     text-align:justify;
@@ -318,15 +316,6 @@ body{
     border-left:1px solid var(--border-color);
     border-top:1px solid var(--border-color);
     background-color: black;
-}
-.companyTag{
-    font-family: Triakis;
-    text-transform: uppercase;
-    position: absolute;
-    writing-mode: vertical-lr;
-    font-size: 1rem;
-    right: -2rem;
-    bottom: 10px;
 }
 .songs{
     border:none;
