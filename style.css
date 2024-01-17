@@ -347,7 +347,7 @@ body{
     top:0;
     left:0;
     filter: none;
-    background-image: url("/compact-disc-solid.svg");
+    background-image: url("compact-disc-solid.svg");
     background-size: cover;
 }
 
