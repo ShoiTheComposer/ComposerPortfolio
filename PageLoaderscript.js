@@ -1,4 +1,5 @@
 function fitText(){
+    console.log("fit texted");
     textFit(document.getElementsByClassName("year"), {alignHoriz: true, alignVert: true,detectMultiLine: false,reProcess: true});
     textFit(document.getElementsByClassName('company'), {alignHoriz: true, alignVert: true ,detectMultiLine: false,reProcess: true});
     }
@@ -18,9 +19,10 @@ function isMobile() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+window.onload = (event) => {
+    console.log("page is fully loaded");
     fitText();
-});
+  };
 
 // Resize Detection
 var changeDevice = isMobile();

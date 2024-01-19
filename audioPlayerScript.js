@@ -158,7 +158,7 @@ playList.forEach(function(elem) {
                         })
                     }
                     playMusic();
-                    console.log(elem.firstChild.src);
+                    // console.log(elem.firstChild.src);
                     changeSongTitle(elem.firstChild.src.split('/').slice(0,elem.firstChild.src.split('/').length)[elem.firstChild.src.split('/').length - 1]);
                     // toggle Player controls out
                     if (playerToggle != true){
@@ -177,10 +177,8 @@ playList.forEach(function(elem) {
 
 // Rotate Animation
 function rotateVinyl(elm){
-    console.log(Vynl);
     if (String(elm) == "play"){
         //Different songs
-        console.log("play Vynl");
         gsap.to(gsap.getTweensOf(Vynl.querySelector('.vynlbg'))[0],{
             timeScale: 1,
             duration: 2,
@@ -192,8 +190,6 @@ function rotateVinyl(elm){
         });
     }
     else if (String(elm) == "stop"){
-        console.log("Stop Vynl");
-        console.log(gsap.getTweensOf(Vynl.querySelector('.vynlbg'))[0]);
         gsap.to(gsap.getTweensOf(Vynl.querySelector('.vynlbg'))[0],{
             timeScale: 0,
             duration: 2,

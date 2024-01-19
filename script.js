@@ -1,4 +1,5 @@
 ScrollTrigger.clearScrollMemory('manual');
+
 const locoScroll = new LocomotiveScroll({
     el: document.querySelector('.contentWrapper'),
     smooth: true,
@@ -110,7 +111,6 @@ if (isMobile() == false){
             start: "50% 50%",
             end: "+=7500",
             pin: "#projectsCenter",
-            onEnter: fitText(),
             // snap: {
             //     snapTo: 1 / 6,
             //     duration: 0.5,

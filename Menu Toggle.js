@@ -23,7 +23,7 @@ var MenuAnmOfftl = gsap.timeline({
 });
 
 toggleBtn.addEventListener("click", function(){
-  console.log(lockMenuAnimation)
+  // console.log(lockMenuAnimation)
   if (lockMenuAnimation != true){
     toggleMenu();
   }
