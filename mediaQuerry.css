@@ -104,6 +104,9 @@
     .artWork:nth-child(7){
         order:11
     }
+    .artWork:nth-child(8){
+        order:13
+    }
     p:nth-child(1 of .company){
         order:2
     }
@@ -121,5 +124,8 @@
     }
     p:nth-child(6 of .company){
         order:12
+    }
+    p:nth-child(7 of .company){
+        order:14
     }
 }
